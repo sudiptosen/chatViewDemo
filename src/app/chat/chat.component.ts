@@ -18,7 +18,7 @@ export class ChatComponent implements AfterViewInit {
     messageText: string = '';
 
     constructor() {
-        this._filteredViewMessages = MessageGenerator.generateTestMessages(40);
+        this._filteredViewMessages = MessageGenerator.generateTestMessages(15);
     }
 
     ngAfterViewInit() {

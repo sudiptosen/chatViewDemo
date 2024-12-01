@@ -15,7 +15,7 @@
                                 </StackLayout>
                             </ng-template>
                         </ListView>
-                    </GridLayout>
+                    </GridLayout>   
                     <GridLayout row="1" columns="*, auto" verticalAlignment="middle" height="60" class="input-area">
                         <TextView col="0" #messageInput [(ngModel)]="messageText" hint="Type a message..."
                             returnKeyType="send" (returnPress)="onSend()" class="input-field" verticalAlignment="middle"></TextView>
