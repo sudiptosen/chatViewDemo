@@ -1,10 +1,21 @@
 .top-header {
-    background-color: #007AFF;
-    color: white;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-bottom-width: 1;
+    border-bottom-color: #E5E5EA;
 }
 
 .body-background {
-    background-color: #f0f0f0;
+    background-color: #FFFFFF;
+}
+
+.chat-content {
+    background-color: #FFFFFF;
+}
+
+.input-area {
+    background-color: #F2F2F7;
+    padding: 0 5;
 }
 
 .veew-list-view {
@@ -26,15 +37,18 @@
     border-radius: 15;
     color: white;
     max-width: 80%;
+    text-wrap: true;
+    white-space: normal;
 }
 
 .my-message {
     background-color: #007AFF;
+    color: #FFFFFF;
 }
 
 .their-message {
-    background-color: #E9E9EB;
-    color: black;
+    background-color: #E9E9EA;
+    color: #000000;
 }
 
 .message-text {
@@ -71,17 +85,13 @@
 }
 
 .input-field {
-    background-color: white;
-    border-radius: 20;
-    padding: 10;
-    vertical-align: middle;
-    margin: 5 10;
-    height: 40;
-}
-
-.input-field {
-    padding: 10;
-    vertical-align: middle;
+    padding: 8 12;
+    margin: 5;
+    min-height: 36;
+    max-height: 100;
+    border-radius: 18;
+    background-color: #FFFFFF;
+    placeholder-color: #8E8E93;
 }
 
 .send-icon {
@@ -92,12 +102,12 @@
 }
 
 .send-button {
-    margin: 5;
+    margin: 0 5;
     padding: 5 10;
     background-color: #007AFF;
     color: white;
     border-radius: 5;
     font-size: 14;
     min-width: 60;
-    height: 35;
+    height: 36;
 }

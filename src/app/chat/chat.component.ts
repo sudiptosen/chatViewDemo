@@ -2,12 +2,7 @@ import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { GridLayout, ListView } from '@nativescript/core';
 import { registerSoftKeyboardCallback } from "nativescript-soft-keyboard";
 import * as helper from "@nativescript/core/utils/layout-helper";
-
-interface Message {
-    message: string;
-    isFromMe: boolean;
-    timestamp: Date;
-}
+import { Message, MessageGenerator } from '../models/message.model';
 
 @Component({
     selector: 'chat-view',
@@ -23,59 +18,7 @@ export class ChatComponent implements AfterViewInit {
     messageText: string = '';
 
     constructor() {
-        // Initialize with test messages 1.0 to 10.0
-        this._filteredViewMessages = [
-            {
-                message: 'Test 1.0',
-                isFromMe: true,
-                timestamp: new Date(Date.now() - 3600000)
-            },
-            {
-                message: 'Test 2.0',
-                isFromMe: false,
-                timestamp: new Date(Date.now() - 3300000)
-            },
-            {
-                message: 'Test 3.0',
-                isFromMe: true,
-                timestamp: new Date(Date.now() - 3000000)
-            },
-            {
-                message: 'Test 4.0',
-                isFromMe: false,
-                timestamp: new Date(Date.now() - 2700000)
-            },
-            {
-                message: 'Test 5.0',
-                isFromMe: true,
-                timestamp: new Date(Date.now() - 2400000)
-            },
-            {
-                message: 'Test 6.0',
-                isFromMe: false,
-                timestamp: new Date(Date.now() - 2100000)
-            },
-            {
-                message: 'Test 7.0',
-                isFromMe: true,
-                timestamp: new Date(Date.now() - 1800000)
-            },
-            {
-                message: 'Test 8.0',
-                isFromMe: false,
-                timestamp: new Date(Date.now() - 1500000)
-            },
-            {
-                message: 'Test 9.0',
-                isFromMe: true,
-                timestamp: new Date(Date.now() - 1200000)
-            },
-            {
-                message: 'Test 10.0',
-                isFromMe: false,
-                timestamp: new Date(Date.now() - 900000)
-            }
-        ];
+        this._filteredViewMessages = MessageGenerator.generateTestMessages(40);
     }
 
     ngAfterViewInit() {
