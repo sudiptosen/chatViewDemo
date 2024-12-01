@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { ListView } from '@nativescript/core';
+import { GridLayout, ListView } from '@nativescript/core';
 import { registerSoftKeyboardCallback } from "nativescript-soft-keyboard";
 import * as helper from "@nativescript/core/utils/layout-helper";
 
@@ -16,6 +16,7 @@ interface Message {
 })
 export class ChatComponent implements AfterViewInit {
     @ViewChild('lvMain') lvMainElement: ElementRef;
+    @ViewChild('gl') glElement: ElementRef;
     
     _isLoading: boolean = false;
     _filteredViewMessages: Message[] = [];
@@ -79,10 +80,12 @@ export class ChatComponent implements AfterViewInit {
 
     ngAfterViewInit() {
         registerSoftKeyboardCallback((height) => {
-            const lv = <ListView>this.lvMainElement.nativeElement;        
+            const lv = <ListView>this.lvMainElement.nativeElement;       
+            const gl = <GridLayout>this.glElement.nativeElement; 
             if(height > 0) {
-                lv.height = helper.layout.toDeviceIndependentPixels(lv.height as number);
-            }
+                const glHeight = helper.layout.toDeviceIndependentPixels(gl.height as number);
+                lv.height = glHeight - height;
+            } 
             setTimeout(() => this.scrollToBottom(), 500);
         });
     }
