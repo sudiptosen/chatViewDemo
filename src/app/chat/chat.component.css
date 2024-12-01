@@ -1,0 +1,103 @@
+.top-header {
+    background-color: #007AFF;
+    color: white;
+}
+
+.body-background {
+    background-color: #f0f0f0;
+}
+
+.veew-list-view {
+    background-color: transparent;
+}
+
+.message-left {
+    margin: 10;
+    horizontal-align: left;
+}
+
+.message-right {
+    margin: 10;
+    horizontal-align: right;
+}
+
+.message-bubble {
+    padding: 10 15;
+    border-radius: 15;
+    color: white;
+    max-width: 80%;
+}
+
+.my-message {
+    background-color: #007AFF;
+}
+
+.their-message {
+    background-color: #E9E9EB;
+    color: black;
+}
+
+.message-text {
+    word-wrap: break-word;
+}
+
+.text-color-light-1 {
+    color: white;
+}
+
+.text-color-light-2 {
+    color: black;
+}
+
+.text-size-3 {
+    font-size: 16;
+}
+
+.message-footer {
+    font-size: 12;
+    color: #888888;
+    margin-right: 5;
+}
+
+.avatar {
+    background-color: #ddd;
+    border-radius: 25;
+    width: 40;
+    height: 40;
+    text-align: center;
+    vertical-align: center;
+    font-size: 18;
+    color: #666;
+}
+
+.input-field {
+    background-color: white;
+    border-radius: 20;
+    padding: 10;
+    vertical-align: middle;
+    margin: 5 10;
+    height: 40;
+}
+
+.input-field {
+    padding: 10;
+    vertical-align: middle;
+}
+
+.send-icon {
+    font-size: 24;
+    padding: 10;
+    color: #007AFF;
+    vertical-align: middle;
+}
+
+.send-button {
+    margin: 5;
+    padding: 5 10;
+    background-color: #007AFF;
+    color: white;
+    border-radius: 5;
+    font-size: 14;
+    min-width: 60;
+    height: 35;
+}

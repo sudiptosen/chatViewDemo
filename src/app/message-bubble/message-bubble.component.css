@@ -1,0 +1,44 @@
+.incoming-message {
+    background-color: white;
+    border-radius: 15;
+    margin: 5 10;
+}
+
+.outgoing-message {
+    background-color: #007AFF;
+    border-radius: 15;
+    margin: 5 10;
+}
+
+.message-text {
+    word-wrap: break-word;
+}
+
+.text-color-light-1 {
+    color: white;
+}
+
+.text-color-light-2 {
+    color: black;
+}
+
+.text-size-3 {
+    font-size: 16;
+}
+
+.message-footer {
+    font-size: 12;
+    color: #888888;
+    margin-right: 5;
+}
+
+.avatar {
+    background-color: #ddd;
+    border-radius: 25;
+    width: 40;
+    height: 40;
+    text-align: center;
+    vertical-align: center;
+    font-size: 18;
+    color: #666;
+}

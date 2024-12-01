@@ -1,0 +1,31 @@
+<GridLayout rows="auto" padding="4">
+    <!--Outgoing Message-->
+    <GridLayout columns="60, *, 20" *ngIf="message.fromMemberId === currentMemberId">
+        <GridLayout col="1" columns="8, 50, *" class="outgoing-message">
+            <Label col="1" class="avatar" [text]="message.avatarLetter"></Label>
+            <GridLayout col="2" rows="*, 20" padding="2" height="100%">
+                <StackLayout padding="8">
+                    <Label class="message-text text-size-3 text-color-light-1" [text]="message.message"></Label>
+                </StackLayout>
+                <GridLayout row="1" columns="*, auto">
+                    <Label col="1" class="message-footer" [text]="timePassed(message.timestamp)" textAlignment="right"></Label>
+                </GridLayout>
+            </GridLayout>
+        </GridLayout>
+    </GridLayout>
+
+    <!--Incoming Message-->
+    <GridLayout columns="10, *, 60" *ngIf="message.fromMemberId !== currentMemberId">
+        <GridLayout col="1" columns="8, 50, *" class="incoming-message">
+            <Label col="1" class="avatar" [text]="message.avatarLetter"></Label>
+            <GridLayout col="2" rows="*, 20" padding="2" height="100%">
+                <StackLayout padding="8">
+                    <Label class="message-text text-size-3 text-color-light-2" [text]="message.message"></Label>
+                </StackLayout>
+                <GridLayout row="1" columns="*, auto">
+                    <Label col="1" class="message-footer" [text]="timePassed(message.timestamp)"></Label>
+                </GridLayout>
+            </GridLayout>
+        </GridLayout>
+    </GridLayout>
+</GridLayout>

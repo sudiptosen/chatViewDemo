@@ -1,0 +1,33 @@
+<ActionBar title="Chat Demo" class="top-header" style="padding: 0"></ActionBar>
+
+<GridLayout class="body-background" #gl>
+    <StackLayout dock="top" verticalAlignment="center" horizontalAlignment="center">
+        <ActivityIndicator *ngIf="_isLoading" [busy]="true"></ActivityIndicator>
+    </StackLayout>
+
+    <ScrollView #sv *ngIf="!_isLoading">
+        <GridLayout rows="*, auto" height="100%">
+            <GridLayout row="0">
+                <ScrollView>
+                    <ListView #lvMain [items]="_filteredViewMessages">
+                        <ng-template let-item="item">
+                            <StackLayout [class]="item.isFromMe ? 'message-right' : 'message-left'">
+                                <Label [text]="item.message" class="message-bubble" 
+                                       [class.my-message]="item.isFromMe" 
+                                       [class.their-message]="!item.isFromMe">
+                                </Label>
+                            </StackLayout>
+                        </ng-template>
+                    </ListView>
+                </ScrollView>
+            </GridLayout>
+            <GridLayout height="50" row="1" verticalAlignment="top">
+                <GridLayout columns="*, auto">
+                    <TextField col="0" #messageInput [(ngModel)]="messageText" hint="Type a message..." 
+                              returnKeyType="send" (returnPress)="onSend()" class="input-field"></TextField>
+                    <Button col="1" text="Send" class="send-button" (tap)="onSend()"></Button>
+                </GridLayout>
+            </GridLayout>
+        </GridLayout>
+    </ScrollView>
+</GridLayout>
